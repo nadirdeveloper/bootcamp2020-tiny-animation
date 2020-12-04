@@ -83,7 +83,7 @@ const About = () => {
       easing: "ease-in-out",
     },
   });
-
+console.log(contentCopyWriting)
   return (
     <Box component="div" className={classes.root} id="about">
       <Grid container>

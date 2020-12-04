@@ -1,6 +1,6 @@
 import React from "react";
 
-import { makeStyles, Box, Typography, Grid, Paper } from "@material-ui/core";
+import { makeStyles, Box,  Grid } from "@material-ui/core";
 
 import chat1 from "../Images/chat1.png";
 import chat2 from "../Images/chat2.png";
@@ -80,6 +80,7 @@ const Chatbot = () => {
       easing: "ease-in-out",
     },
   });
+  console.log(contentCopyWriting)
   const datas = [{ image: chat1, textData: "Community" },
   { image: chat2, textData: "Corporate" },
   { image: chat3, textData: "Technology" },
