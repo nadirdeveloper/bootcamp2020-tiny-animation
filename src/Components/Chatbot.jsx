@@ -92,7 +92,7 @@ const Chatbot = () => {
       <Grid container>
         <div className={classes.cardContainer}>
           {datas.map((data, index) => (
-            <Card classes={classes} cardImg={data.image} cardText={data.textData} />
+            <Card classes={classes} key={index} cardImg={data.image} cardText={data.textData} />
           ))}
 
         </div>

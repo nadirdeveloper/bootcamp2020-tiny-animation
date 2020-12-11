@@ -1,8 +1,6 @@
 import React from "react";
 
-import { makeStyles, Box, Typography, Grid, Paper } from "@material-ui/core";
-
-import contentUXImage from "../Images/contentCopyWrite.svg";
+import { makeStyles, Box} from "@material-ui/core";
 
 import useWebAnimations, { heartBeat } from "@wellyshen/use-web-animations";
 
@@ -11,31 +9,53 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContext: "center",
     background:
-      "linear-gradient(-90deg, rgba(75,6,193,1) 0%, rgba(206,2,189,1) 100%)",
-    height: "90.8vh",
+      "linear-gradient(to right, #860091, #662975)",
+    height: "50.8vh",
   },
-  paper: {
+  contactHeading: {
     textAlign: "center",
-    padding: theme.spacing(2),
-    marginTop: theme.spacing(20),
-    marginBottom: theme.spacing(8),
-    marginLeft: theme.spacing(6),
-    marginRight: theme.spacing(6),
-    border: "none",
-    boxShadow: "none",
-    color: "inherit",
-    background: "inherit",
-    "& h2": {
-      color: "#fff",
-      fontSize: "3.9rem",
-      fontFamily: "Georgia,Times New Roman,Times,serif",
-      marginBottom: theme.spacing(3),
-    },
-    "& p": {
-      color: "#fff",
-      fontSize: "1.1rem",
-    },
+    color:"#fff",
+    margin:"0",
+    fontWeight:"200",
+    fontStyle:"italic",
   },
+  contactSubHeading: {
+    textAlign: "center",
+    color:"#fff",
+    margin:"0",
+    fontWeight:"100",
+  },
+  contactContainer:{
+    width:"100%",
+    flex:1,
+    marginTop:"40px"
+  },
+  contactBold:{
+    fontWeight: "300",
+  },
+  contactCard: {
+    // border: "1px solid black",
+   
+  },
+  contactIconCont: {
+    textAlign:"center",
+    marginTop: "25%",
+    marginBottom:"25%",
+  },
+  contactEmail: {
+    color:"#fff",
+    fontWeight:"400",
+    fontSize:"15px",
+    '&:hover': {
+      background: "#662975",
+   },
+  },
+  contactCardCont: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }
+
 }));
 
 const Contact = () => {
@@ -52,33 +72,23 @@ const Contact = () => {
       easing: "ease-in-out",
     },
   });
-
+console.log(contentCopyWriting)
   return (
     <Box component="div" className={classes.root}>
-      <Grid container>
-        <Grid item md>
-          <Paper className={classes.paper} style={{ marginTop: "150px" }}>
-            <img
-              src={contentUXImage}
-              ref={contentCopyWriting.ref}
-              alt="contentUX"
-            />
-          </Paper>
-        </Grid>
-        <Grid item md>
-          <Paper className={classes.paper}>
-            <Typography variant="h2">Contact</Typography>
-            <Typography component="p">
-              Your website is a dialogue with your audience. I capture the
-              essence of your business and communicate it clearly. Carefully
-              considered writing and SEO best practices allow me to craft the
-              perfect user journey online. Let me draw the map that guides users
-              every step of the way from discovery, to consideration, to
-              conversion.
-            </Typography>
-          </Paper>
-        </Grid>
-      </Grid>
+      <div className={classes.contactContainer}>
+      <h2 className={classes.contactHeading}>Pick my brain/cortex and let's get</h2>
+       <h2 className={classes.contactSubHeading}><span className={classes.contactBold}>started</span> on your project</h2>
+      <div className={classes.contactCardCont}>
+      <div className={classes.contactCard}>
+        <div className={classes.contactIconCont}>
+          <i className="fa fa-envelope" style={{fontSize:"50px",color:"#fff"}}></i>
+        </div>
+        <h3 className={classes.contactEmail}>nathan@cortexcopywriter.com</h3>
+      </div>
+      </div>
+      
+      </div>
+      
     </Box>
   );
 };

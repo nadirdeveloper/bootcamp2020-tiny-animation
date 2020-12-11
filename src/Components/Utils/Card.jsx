@@ -9,7 +9,7 @@ export default function Card({classes,cardImg,cardText}) {
              <img src={cardImg} alt="image1"/>
            </div>
            <div className={classes.text}>
-             <Typography variant="p">
+             <Typography variant="h6">
              {cardText}
              </Typography>
            </div>
