@@ -1,6 +1,6 @@
 import React from "react";
 
-import { makeStyles, Box,  Grid } from "@material-ui/core";
+import { makeStyles, Box,  Grid, Typography } from "@material-ui/core";
 
 import chat1 from "../Images/chat1.png";
 import chat2 from "../Images/chat2.png";
@@ -13,11 +13,20 @@ import Card from "./Utils/Card";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
     justifyContext: "center",
     background:
       "linear-gradient(to right, #860091, #662975);",
     height: "90.8vh",
+    display:"flex",
+    alignItems: "center",
+    flexDirection:"column"
+  },
+  mainContainer: {
+    display: "flex",
+    justifyContext: "center",
+    alignItems: "center",
+    height: "60.8vh",
+
   },
   paper: {
     textAlign: "center",
@@ -55,14 +64,27 @@ const useStyles = makeStyles((theme) => ({
     margin: "5px",
   },
   imgContainer: {
-    border: "1px solid black",
     textAlign: "center",
+    marginTop:"10px",
     "& img": {
       height: "130px"
     }
   },
   text: {
     textAlign: "center",
+    fontSize:"14px",
+    color:"#fff",
+  },
+  btnHeading: {
+    boxShadow: "1px 16px 20px rgba(0, 0, 0, 0.17);",
+    fontSize: "24px !important",
+    display: "inline-block",
+    marginLeft: "30px",
+    padding: "5px 40px",
+    fontWeight: 400,
+    color: "white",
+    backgroundColor:"rgba(0,0,0,0.1)",
+    marginTop: "10%"
   }
 }));
 
@@ -84,11 +106,15 @@ const Chatbot = () => {
   const datas = [{ image: chat1, textData: "Community" },
   { image: chat2, textData: "Corporate" },
   { image: chat3, textData: "Technology" },
-  { image: chat4, textData: "Technology" },
-  { image: chat5, textData: "Technology" },
+  { image: chat4, textData: "Luxury" },
+  { image: chat5, textData: "Entertainment" },
   ]
   return (
+    <>
     <Box component="div" className={classes.root} id="chatbot">
+    {/* <Typography variant="h3" className={classes.btnHeading}>Select avatars to switch chatbot voice & tone</Typography> */}
+    <Typography variant="h3" className={classes.btnHeading}>Chatbot Voice & Tone</Typography>
+    <Box component="div" className={classes.mainContainer} id="chatbot">
       <Grid container>
         <div className={classes.cardContainer}>
           {datas.map((data, index) => (
@@ -98,6 +124,9 @@ const Chatbot = () => {
         </div>
       </Grid>
     </Box>
+    </Box>
+      
+    </>
   );
 };
 
